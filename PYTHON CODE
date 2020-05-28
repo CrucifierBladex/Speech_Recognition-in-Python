@@ -1,0 +1,23 @@
+#CODE STARTS HERE##
+
+import speech_recognition as hp   #pip install SpeechRecognition and import the library
+s=hp.Recognizer()
+with hp.Microphone() as user_input:  #using the inbuilt microphone of the device
+    print('speak into the microphone:\n') #asking the user to input the data
+    aud=s.listen(user_input) 
+    try:
+        out=s.recognize_google(aud)
+        print('Did you mean to say:{}'.format(out))
+    except:
+        print('could not understand please repeat into the mic again')
+        
+        
+        
+        
+        
+        
+        ###A very basic implementation of speech recognition module ###
+        
+        ###Prerequisites:
+              1)Pyaudio ##pip install pyaudio
+              2)A working microphone
